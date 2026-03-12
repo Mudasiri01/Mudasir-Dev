@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Web Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo" href="#home"><i class="fas fa-code"></i>
+                <span class="glow-text">Mudasir.dev</span>
+            </a>
+            <div class="header-actions d-flex align-items-center order-lg-3 ms-auto">
+                <button id="theme-toggle" class="theme-toggle me-2" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Projects</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Profile Image Column -->
+                <div class="col-lg-5 col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+                    <div class="profile-container">
+                        <div class="profile-image-wrapper">
+                            <img src="Mudasir.jpg" alt="Profile" class="profile-img">
+                            <div class="glow-ring"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Text Column -->
+                <div class="col-lg-7 col-md-6 " data-aos="fade-left">
+                    <div class="hero-content">
+                        <h3 class="greeting">Hello, I'm</h3>
+                        <h1 class="name">Mudasir iqbal</h1>
+                        <h2 class="role"><span class="gradient-text typing-text">Frontend Developer & UI/UX
+                                Designer</span></h2>
+                        <p class="description">
+                            Learning web development and exploring the world of HTML, CSS, and JavaScript. I love
+                            building simple, interactive websites and improving my coding skills every day
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-secondary-glow">
+                                <i class="fas fa-envelope me-2"></i>Contact Me
+                            </a>
+                            <a href="https://drive.google.com/file/d/1HdP8HQwdwS4pT7fR3DhqmIS3n5HNHtDZ/view?usp=drive_link"
+                                download="Mudasir-iqbal-cv.pdf" class="btn btn-cv">
+                                <i class="fas fa-download me-2"></i>Download CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About <span class="gradient-text">Me</span></h2>
+                <p>Get to know more about my journey and expertise</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-content">
+                        <h3 class="mb-4">Frontend Developer & Designer</h3>
+                        <p>
+                            I’m a passionate frontend developer with experience in building responsive and user-friendly
+                            websites. Currently, I’m expanding my skills in full-stack development, learning both
+                            backend and frontend technologies to create complete web applications.
+                        </p>
+
+                        <!-- Contact info removed as per request -->
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C++</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Node.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-darker">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My <span class="gradient-text">Skills</span></h2>
+                <p>Technologies and tools I work with</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="100">
+                    <div class="skill-card">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML5</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="150">
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS3</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="200">
+                    <div class="skill-card">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="250">
+                    <div class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h4>C++</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="300">
+                    <div class="skill-card">
+                        <i class="fab fa-node"></i>
+                        <h4>Node.js</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="350">
+                    <div class="skill-card">
+                        <i class="fab fa-bootstrap"></i>
+                        <h4>Bootstrap</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="400">
+                    <div class="skill-card">
+                        <i class="fab fa-git-alt"></i>
+                        <h4>Git & GitHub Version Control</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="450">
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h4>MongoDB</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My <span class="gradient-text">Services</span></h2>
+                <p>What I offer to help your business grow</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>Creating responsive, modern websites using the latest technologies and frameworks.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p>Ensuring your website looks perfect on all devices, from mobile to desktop.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding bg-darker">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My <span class="gradient-text">Projects</span></h2>
+                <p>Recent projects I've worked on</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop"
+                                alt="College Management System">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-sm btn-primary-glow">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>College Management System</h4>
+                            <p>Full-Stack Web App</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=600&fit=crop"
+                                alt="College Website">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-sm btn-primary-glow">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>College Website</h4>
+                            <p>Responsive Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
+                                alt="E-Commerce Frontend">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-sm btn-primary-glow">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>E-Commerce Frontend</h4>
+                            <p>Online Shopping Interface</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop"
+                                alt="Easypaisa Console Application">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-sm btn-primary-glow">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Easypaisa Console App</h4>
+                            <p>C++ Application</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg"
+                                alt="Other Project">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-sm btn-primary-glow">Coming Soon</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Other Project</h4>
+                            <p>Currently Building...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Contact <span class="gradient-text">Me</span></h2>
+                <p>Let's work together on your next project</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Get In Touch</h3>
+                        <p class="mb-4">
+                            I'm always open to discussing new projects, creative ideas, or opportunities
+                            to be part of your visions. Feel free to reach out!
+                        </p>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>mudasiriqbal2819@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+92 336 1900362</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Bhakkar city near DHQ in Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <form class="contact-form" action="/contact" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Subject" name="Subject" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" name="Massage" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-glow">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Portfolio. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> by
+                        Mudasir iqbal </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
