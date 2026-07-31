@@ -1,18 +1,88 @@
-// ==================== Initialize AOS Animation ====================
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-});
+// ==================== Premium Intro Screen Logic ====================
+(function () {
+    const introScreen = document.getElementById('intro-screen');
 
-// ==================== Navbar Scroll Effect ====================
+    const initAOS = function () {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 1000, easing: 'ease-in-out', once: true, mirror: false });
+        }
+    };
+
+    // If no intro element found, just init AOS and exit
+    if (!introScreen) {
+        initAOS();
+        return;
+    }
+
+    // If user already saw intro this session, hide it immediately and init AOS
+    if (sessionStorage.getItem('introSeen')) {
+        introScreen.style.display = 'none';
+        document.body.style.overflow = '';
+        initAOS();
+        return;
+    }
+
+    // Show intro - block scrolling
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+
+    const introName    = document.getElementById('intro-name-text');
+    const introContent = document.querySelector('.intro-content');
+
+    if (!introName || !introContent) {
+        // Elements missing – just dismiss
+        introScreen.style.display = 'none';
+        document.body.style.overflow = '';
+        initAOS();
+        return;
+    }
+
+    // --- Typing animation ---
+    var textToType = "Mudasir Iqbal";
+    var idx = 0;
+
+    function typeName() {
+        if (idx < textToType.length) {
+            introName.textContent += textToType.charAt(idx);
+            idx++;
+            setTimeout(typeName, 90);
+        } else {
+            // Typing done → show role & subtitle
+            setTimeout(function () {
+                introContent.classList.add('show-elements');
+            }, 250);
+        }
+    }
+
+    // Start typing after 400ms
+    setTimeout(typeName, 400);
+
+    // --- Fade out after 3 seconds ---
+    setTimeout(function () {
+        introScreen.classList.add('hidden');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('introSeen', 'true');
+        initAOS();
+
+        // Remove from DOM after transition finishes
+        setTimeout(function () {
+            if (introScreen.parentNode) {
+                introScreen.parentNode.removeChild(introScreen);
+            }
+        }, 900);
+    }, 3000);
+}());
+
+
+// ==================== Premium Navbar Scroll Effect ====================
+const premiumNav = document.getElementById('premium-navbar');
 window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (premiumNav) {
+        if (window.scrollY > 50) {
+            premiumNav.classList.add('scrolled');
+        } else {
+            premiumNav.classList.remove('scrolled');
+        }
     }
 });
 
@@ -41,21 +111,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ==================== Active Navigation Link on Scroll ====================
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.pnav-link, .pnav-mobile-link');
 
 function activeNavOnScroll() {
     const scrollY = window.pageYOffset;
+    const navH = premiumNav ? premiumNav.offsetHeight + 20 : 80;
 
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const sectionTop = section.offsetTop - navbarHeight - 10;
+        const sectionTop = section.offsetTop - navH - 10;
         const sectionId = section.getAttribute('id');
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
+                if (link.getAttribute('href') === '#' + sectionId) {
                     link.classList.add('active');
                 }
             });
@@ -188,19 +258,43 @@ window.addEventListener('scroll', function () {
     }
 });
 
-// ==================== Navbar Background on Mobile ====================
-const navbarToggler = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.querySelector('.navbar-collapse');
+// ==================== Premium Mobile Menu ====================
+const hamburger   = document.getElementById('pnav-hamburger');
+const mobileMenu  = document.getElementById('pnav-mobile');
+const overlay     = document.getElementById('pnav-overlay');
+const closeBtn    = document.getElementById('pnav-mobile-close');
+const mobileLinks = document.querySelectorAll('.pnav-mobile-link');
 
-if (navbarToggler && navbarCollapse) {
-    navbarToggler.addEventListener('click', function () {
-        if (!navbarCollapse.classList.contains('show')) {
-            document.querySelector('.navbar').classList.add('mobile-open');
-        } else {
-            document.querySelector('.navbar').classList.remove('mobile-open');
-        }
-    });
+function openMobileMenu() {
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    hamburger.setAttribute('aria-expanded', 'true');
 }
+
+function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
+}
+
+if (hamburger) hamburger.addEventListener('click', openMobileMenu);
+if (closeBtn)  closeBtn.addEventListener('click', closeMobileMenu);
+if (overlay)   overlay.addEventListener('click', closeMobileMenu);
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        closeMobileMenu();
+    });
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+});
 
 // ==================== Preloader (Optional) ====================
 window.addEventListener('load', function () {
