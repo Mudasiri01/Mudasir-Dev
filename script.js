@@ -431,6 +431,18 @@ themeToggle.addEventListener('click', () => {
 console.log('%c Portfolio Website Loaded Successfully! ', 'background: linear-gradient(135deg, #00d9ff 0%, #ff006e 100%); color: white; font-size: 16px; padding: 10px; border-radius: 5px;');
 console.log('%c Developed with Mudasir iqbal', 'color: #00d9ff; font-size: 14px;');
 
+// ==================== FAQ Accordion Toggle ====================
+function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all open items
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    // If it was not open, open it
+    if (!isOpen) {
+        item.classList.add('open');
+    }
+}
+
 // ==================== Custom Professional Cursor Logic ====================
 const cursorDot = document.querySelector('[data-cursor-dot]');
 const cursorOutline = document.querySelector('[data-cursor-outline]');

@@ -2839,3 +2839,258 @@ html {
         background-color: rgba(255, 0, 110, 0.1);
     }
 }
+
+/* ==================== Testimonials ==================== */
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,217,255,0.2);
+    border-color: var(--primary-color);
+}
+
+.testimonial-card:hover::before {
+    opacity: 0.05;
+}
+
+.testimonial-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-quote {
+    font-size: 2rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.testimonial-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.2rem;
+}
+
+.testimonial-avatar {
+    font-size: 3rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+}
+
+.testimonial-info h5 {
+    color: var(--text-main);
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+    font-size: 1rem;
+}
+
+.testimonial-info span {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.testimonial-stars {
+    margin-top: 0.3rem;
+    color: #f59e0b;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+/* ==================== FAQ ==================== */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 20px rgba(0,217,255,0.1);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s ease;
+    gap: 1rem;
+}
+
+.faq-question:hover {
+    color: var(--primary-color);
+}
+
+.faq-icon {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    flex-shrink: 0;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding: 0 1.5rem 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin: 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+/* ==================== CTA Work Together ==================== */
+.cta-work-section {
+    background: linear-gradient(135deg, rgba(0,217,255,0.05) 0%, rgba(139,92,246,0.05) 100%);
+}
+
+.cta-work-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.cta-work-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0,217,255,0.06) 0%, transparent 60%);
+    animation: intro-breathe 5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.cta-work-card:hover {
+    box-shadow: 0 20px 60px rgba(0,217,255,0.2);
+}
+
+.cta-work-icon {
+    font-size: 3.5rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cta-work-card h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.cta-work-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.cta-work-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.cta-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cta-stat i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+    .cta-work-card {
+        padding: 2.5rem 1.2rem;
+    }
+    .cta-work-card h2 {
+        font-size: 1.6rem;
+    }
+    .cta-work-stats {
+        gap: 1rem;
+    }
+}
