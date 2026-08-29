@@ -92,7 +92,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const navbar = document.querySelector('.premium-navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 80;
             const targetPosition = target.offsetTop - navbarHeight;
 
             window.scrollTo({
@@ -100,10 +101,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
 
-            // Close mobile menu if open
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
+            // Close mobile menu if open (premium navbar logic)
+            if (typeof closeMobileMenu === 'function') {
+                closeMobileMenu();
             }
         }
     });
@@ -141,6 +141,8 @@ let counterAnimated = false;
 
 function animateCounters() {
     const statsSection = document.querySelector('.stats-section');
+    if (!statsSection) return;
+    
     const statsSectionTop = statsSection.offsetTop;
     const statsSectionHeight = statsSection.offsetHeight;
     const scrollY = window.pageYOffset + window.innerHeight;
@@ -434,3 +436,35 @@ themeToggle.addEventListener('click', () => {
 // ==================== Console Message ====================
 console.log('%c Portfolio Website Loaded Successfully! ', 'background: linear-gradient(135deg, #00d9ff 0%, #ff006e 100%); color: white; font-size: 16px; padding: 10px; border-radius: 5px;');
 console.log('%c Developed with Mudasir iqbal', 'color: #00d9ff; font-size: 14px;');
+
+// ==================== Custom Professional Cursor Logic ====================
+const cursorDot = document.querySelector('[data-cursor-dot]');
+const cursorOutline = document.querySelector('[data-cursor-outline]');
+
+if (cursorDot && cursorOutline) {
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Add a slight delay to the outline for a smooth effect
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    // Add hover effect to interactive elements
+    const hoverElements = document.querySelectorAll('a, button, input, textarea, select, .pnav-link, .pnav-hamburger');
+    
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            document.body.classList.add('hovering');
+        });
+        element.addEventListener('mouseleave', () => {
+            document.body.classList.remove('hovering');
+        });
+    });
+}

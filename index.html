@@ -18,6 +18,9 @@
 </head>
 
 <body>
+    <!-- Professional Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
     <!-- Intro Screen -->
     <div id="intro-screen" class="intro-screen">
@@ -38,15 +41,24 @@
                 <span class="pnav-logo-text glow-text">Mudasir.dev</span>
             </a>
             <ul class="pnav-links">
-                <li class="pnav-item" style="--i:1"><a href="#home" class="pnav-link active"><i class="fas fa-house"></i><span>Home</span></a></li>
-                <li class="pnav-item" style="--i:2"><a href="#about" class="pnav-link"><i class="fas fa-user"></i><span>About</span></a></li>
-                <li class="pnav-item" style="--i:3"><a href="#skills" class="pnav-link"><i class="fas fa-layer-group"></i><span>Skills</span></a></li>
-                <li class="pnav-item" style="--i:4"><a href="#portfolio" class="pnav-link"><i class="fas fa-diagram-project"></i><span>Projects</span></a></li>
-                <li class="pnav-item" style="--i:5"><a href="#services" class="pnav-link"><i class="fas fa-briefcase"></i><span>Services</span></a></li>
-                <li class="pnav-item" style="--i:6"><a href="#contact" class="pnav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                <li class="pnav-item" style="--i:1"><a href="#home" class="pnav-link active"><i
+                            class="fas fa-house"></i><span>Home</span></a></li>
+                <li class="pnav-item" style="--i:2"><a href="#about" class="pnav-link"><i
+                            class="fas fa-user"></i><span>About</span></a></li>
+                <li class="pnav-item" style="--i:3"><a href="#skills" class="pnav-link"><i
+                            class="fas fa-layer-group"></i><span>Skills</span></a></li>
+                <li class="pnav-item" style="--i:4"><a href="#portfolio" class="pnav-link"><i
+                            class="fas fa-diagram-project"></i><span>Projects</span></a></li>
+                <li class="pnav-item" style="--i:5"><a href="#services" class="pnav-link"><i
+                            class="fas fa-briefcase"></i><span>Services</span></a></li>
+                <li class="pnav-item" style="--i:6"><a href="#achievements" class="pnav-link"><i
+                            class="fas fa-award"></i><span>Achievements</span></a></li>
+                <li class="pnav-item" style="--i:7"><a href="#contact" class="pnav-link"><i
+                            class="fas fa-envelope"></i><span>Contact</span></a></li>
             </ul>
             <div class="pnav-actions">
-                <button id="theme-toggle" class="pnav-theme-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button id="theme-toggle" class="pnav-theme-btn" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
                 <button class="pnav-hamburger" id="pnav-hamburger" aria-label="Open menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -61,18 +73,28 @@
     <div class="pnav-mobile" id="pnav-mobile">
         <div class="pnav-mobile-header">
             <div class="pnav-logo-icon"><i class="fas fa-code"></i></div>
-            <span class="glow-text" style="font-size:1.1rem;font-weight:700;flex:1;margin-left:0.5rem;">Mudasir.dev</span>
-            <button class="pnav-mobile-close" id="pnav-mobile-close" aria-label="Close menu"><i class="fas fa-xmark"></i></button>
+            <span class="glow-text"
+                style="font-size:1.1rem;font-weight:700;flex:1;margin-left:0.5rem;">Mudasir.dev</span>
+            <button class="pnav-mobile-close" id="pnav-mobile-close" aria-label="Close menu"><i
+                    class="fas fa-xmark"></i></button>
         </div>
         <ul class="pnav-mobile-links">
             <li style="--mi:1"><a href="#home" class="pnav-mobile-link active"><i class="fas fa-house"></i>Home</a></li>
             <li style="--mi:2"><a href="#about" class="pnav-mobile-link"><i class="fas fa-user"></i>About</a></li>
-            <li style="--mi:3"><a href="#skills" class="pnav-mobile-link"><i class="fas fa-layer-group"></i>Skills</a></li>
-            <li style="--mi:4"><a href="#portfolio" class="pnav-mobile-link"><i class="fas fa-diagram-project"></i>Projects</a></li>
-            <li style="--mi:5"><a href="#services" class="pnav-mobile-link"><i class="fas fa-briefcase"></i>Services</a></li>
-            <li style="--mi:6"><a href="#contact" class="pnav-mobile-link"><i class="fas fa-envelope"></i>Contact</a></li>
+            <li style="--mi:3"><a href="#skills" class="pnav-mobile-link"><i class="fas fa-layer-group"></i>Skills</a>
+            </li>
+            <li style="--mi:4"><a href="#portfolio" class="pnav-mobile-link"><i
+                        class="fas fa-diagram-project"></i>Projects</a></li>
+            <li style="--mi:5"><a href="#services" class="pnav-mobile-link"><i class="fas fa-briefcase"></i>Services</a>
+            </li>
+            <li style="--mi:6"><a href="#achievements" class="pnav-mobile-link"><i
+                        class="fas fa-award"></i>Achievements</a></li>
+            <li style="--mi:7"><a href="#contact" class="pnav-mobile-link"><i class="fas fa-envelope"></i>Contact</a>
+            </li>
         </ul>
-        <div class="pnav-mobile-footer"><p>Building Modern Web Applications</p></div>
+        <div class="pnav-mobile-footer">
+            <p>Building Modern Web Applications</p>
+        </div>
     </div>
 
 
@@ -95,9 +117,12 @@
                     <div class="hero-content">
                         <h3 class="greeting">Hello, I'm</h3>
                         <h1 class="name">Mudasir iqbal</h1>
-                        <h2 class="role"><span class="gradient-text typing-text">Aspiring MERN Stack Developer</span></h2>
+                        <h2 class="role"><span class="gradient-text typing-text">Aspiring MERN Stack Developer</span>
+                        </h2>
                         <p class="description">
-                            Passionate web developer with a strong foundation in HTML, CSS, JavaScript, and Bootstrap. Currently learning React.js and the MERN Stack while building real-world projects to strengthen my full-stack development skills.
+                            Passionate web developer with a strong foundation in HTML, CSS, JavaScript, and Bootstrap.
+                            Currently learning React.js and the MERN Stack while building real-world projects to
+                            strengthen my full-stack development skills.
                         </p>
                         <div class="hero-buttons">
                             <a href="#contact" class="btn btn-secondary-glow">
@@ -126,7 +151,11 @@
                     <div class="about-content text-center">
                         <h3 class="mb-4">Aspiring MERN Stack Developer</h3>
                         <p>
-                            I am an aspiring MERN stack developer with hands-on experience building responsive websites and web applications. I enjoy creating clean user interfaces and solving real problems with code. Currently, I am improving my full-stack skills by working with React.js, Node.js, Express, and MongoDB. I am looking for opportunities to grow in a professional environment and contribute to meaningful projects.
+                            I am an aspiring MERN stack developer with hands-on experience building responsive websites
+                            and web applications. I enjoy creating clean user interfaces and solving real problems with
+                            code. Currently, I am improving my full-stack skills by working with React.js, Node.js,
+                            Express, and MongoDB. I am looking for opportunities to grow in a professional environment
+                            and contribute to meaningful projects.
                         </p>
                     </div>
                 </div>
@@ -235,10 +264,10 @@
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="portfolio-card">
                         <div class="portfolio-img">
-                            <img src="cms.png"
-                                alt="College Management System">
+                            <img src="cms.png" alt="College Management System">
                             <div class="portfolio-overlay">
-                                <a href="https://gct-bhakkar-mgm-system.netlify.app/" class="btn btn-sm btn-primary-glow">View Project</a>
+                                <a href="https://gct-bhakkar-mgm-system.netlify.app/"
+                                    class="btn btn-sm btn-primary-glow">View Project</a>
                             </div>
                         </div>
                         <div class="portfolio-info">
@@ -250,10 +279,10 @@
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="portfolio-card">
                         <div class="portfolio-img">
-                            <img src="taskmanager.png"
-                                alt="College Website">
+                            <img src="taskmanager.png" alt="College Website">
                             <div class="portfolio-overlay">
-                                <a href="https://taskmanager-uw2y.vercel.app/" class="btn btn-sm btn-primary-glow">View Project</a>
+                                <a href="https://taskmanager-uw2y.vercel.app/" class="btn btn-sm btn-primary-glow">View
+                                    Project</a>
                             </div>
                         </div>
                         <div class="portfolio-info">
@@ -265,10 +294,10 @@
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                     <div class="portfolio-card">
                         <div class="portfolio-img">
-                            <img src="svg.png"
-                                alt="E-Commerce Frontend">
+                            <img src="svg.png" alt="E-Commerce Frontend">
                             <div class="portfolio-overlay">
-                                <a href="https://drive.google.com/file/d/1GJiukjmFAfCrVzkDZQfv-JjXDxzpTInI/view?usp=sharing" class="btn btn-sm btn-primary-glow">View Project</a>
+                                <a href="https://drive.google.com/file/d/1GJiukjmFAfCrVzkDZQfv-JjXDxzpTInI/view?usp=sharing"
+                                    class="btn btn-sm btn-primary-glow">View Project</a>
                             </div>
                         </div>
                         <div class="portfolio-info">
@@ -277,7 +306,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
                     <div class="portfolio-card">
                         <div class="portfolio-img">
@@ -290,6 +319,32 @@
                         <div class="portfolio-info">
                             <h4>Other Project</h4>
                             <p>Currently Building...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section-padding">
+        <div class="container">
+            <div class="section-title no-line" style="margin-bottom: 50px;" data-aos="fade-up">
+                <h2>Achievements / <span class="gradient-text">Certifications</span></h2>
+                <p>Milestones and recognitions I have earned</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-10 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card" style="max-width: 400px; margin: 0 auto;">
+                        <div class="portfolio-img" style="height: auto; max-height: none; padding: 10px; background: #fff;">
+                            <!-- Replace 'ezitech-offer.jpg' with your actual image filename later -->
+                            <img src="OfferLetter_Mudasir_Iqbal.jpg" alt="Ezitech Institute Offer Letter"
+                                 onerror="this.src='https://via.placeholder.com/600x400/121633/00d9ff?text=Ezitech+Institute+Offer+Letter'"
+                                 style="object-fit: contain; width: 100%; height: auto;">
+                        </div>
+                        <div class="portfolio-info text-center">
+                            <h4>Ezitech Institute</h4>
+                            <p>Offer Letter</p>
                         </div>
                     </div>
                 </div>
@@ -336,7 +391,8 @@
                         <div class="social-links mt-4">
                             <a href="https://www.facebook.com/share/18HCR2QJ9E/"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/mudasir-iqbal-4246b3360/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/in/mudasir-iqbal-4246b3360/"><i
+                                    class="fab fa-linkedin-in"></i></a>
                             <a href="https://github.com/Mudasiri01"><i class="fab fa-github"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -355,7 +411,8 @@
                                 <input type="text" class="form-control" placeholder="Subject" name="Subject" required>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" name="Massage" required></textarea>
+                                <textarea class="form-control" rows="5" placeholder="Your Message" name="Massage"
+                                    required></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary-glow">
