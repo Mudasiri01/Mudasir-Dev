@@ -2840,6 +2840,89 @@ html {
     }
 }
 
+/* ==================== Trusted Technologies Marquee ==================== */
+.trusted-tech-section {
+    padding: 60px 0;
+    overflow: hidden;
+    background: var(--secondary-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tech-marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    /* Fade edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.tech-marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tech-track {
+    display: flex;
+    gap: 1.5rem;
+    animation: marquee-scroll 28s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.tech-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.7rem 1.4rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: default;
+    flex-shrink: 0;
+}
+
+.tech-badge:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(0, 217, 255, 0.08);
+    box-shadow: 0 4px 18px rgba(0, 217, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.tech-badge i {
+    font-size: 1.2rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 576px) {
+    .tech-badge {
+        padding: 0.55rem 1rem;
+        font-size: 0.8rem;
+    }
+    .tech-badge i {
+        font-size: 1rem;
+    }
+}
+
 /* ==================== Testimonials ==================== */
 .testimonial-card {
     background: var(--card-bg);
