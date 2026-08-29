@@ -16,12 +16,7 @@
         return;
     }
 
-    // If user already saw intro this session, hide it immediately
-    if (sessionStorage.getItem('introSeen')) {
-        introScreen.style.display = 'none';
-        document.body.style.overflow = '';
-        return;
-    }
+    // Intro always shows on load now (sessionStorage check removed)
 
     // Show intro - block scrolling
     document.body.style.overflow = 'hidden';

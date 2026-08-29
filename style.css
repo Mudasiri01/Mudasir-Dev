@@ -225,6 +225,20 @@ html {
     }
 }
 
+@media (max-width: 480px) {
+    .intro-name {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    .intro-role {
+        font-size: 1.1rem;
+    }
+    .intro-subtitle {
+        font-size: 0.8rem;
+        padding: 0 10px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .intro-screen {
         transition: opacity 0.1s;
