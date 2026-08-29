@@ -4,21 +4,22 @@
 
     const initAOS = function () {
         if (typeof AOS !== 'undefined') {
-            AOS.init({ duration: 1000, easing: 'ease-in-out', once: true, mirror: false });
+            AOS.init({ duration: 800, easing: 'ease-in-out', once: true, mirror: false });
         }
     };
 
-    // If no intro element found, just init AOS and exit
+    // Initialize AOS immediately so content is ready
+    initAOS();
+
+    // If no intro element found, exit
     if (!introScreen) {
-        initAOS();
         return;
     }
 
-    // If user already saw intro this session, hide it immediately and init AOS
+    // If user already saw intro this session, hide it immediately
     if (sessionStorage.getItem('introSeen')) {
         introScreen.style.display = 'none';
         document.body.style.overflow = '';
-        initAOS();
         return;
     }
 
@@ -33,7 +34,6 @@
         // Elements missing – just dismiss
         introScreen.style.display = 'none';
         document.body.style.overflow = '';
-        initAOS();
         return;
     }
 
@@ -45,32 +45,31 @@
         if (idx < textToType.length) {
             introName.textContent += textToType.charAt(idx);
             idx++;
-            setTimeout(typeName, 90);
+            setTimeout(typeName, 40); // Sped up from 90 to 40
         } else {
             // Typing done → show role & subtitle
             setTimeout(function () {
                 introContent.classList.add('show-elements');
-            }, 250);
+            }, 100); // Sped up from 250
         }
     }
 
-    // Start typing after 400ms
-    setTimeout(typeName, 400);
+    // Start typing after 100ms instead of 400ms
+    setTimeout(typeName, 100);
 
-    // --- Fade out after 3 seconds ---
+    // --- Fade out after 1.2 seconds instead of 3 seconds ---
     setTimeout(function () {
         introScreen.classList.add('hidden');
         document.body.style.overflow = '';
         sessionStorage.setItem('introSeen', 'true');
-        initAOS();
 
         // Remove from DOM after transition finishes
         setTimeout(function () {
             if (introScreen.parentNode) {
                 introScreen.parentNode.removeChild(introScreen);
             }
-        }, 900);
-    }, 3000);
+        }, 800);
+    }, 1200);
 }());
 
 
